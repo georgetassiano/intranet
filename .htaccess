@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+RewriteRule . /index.html [L]
+RewriteRule .* - [env=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
